@@ -1,0 +1,7 @@
+export default {
+    GET_NOTES_LIST: 'GET_NOTES_LIST',
+    GET_NOTE_BY_ID: 'GET_NOTE_BY_ID',
+    ADD_NOTE: 'ADD_NOTE',
+    SAVE_NOTE: 'SAVE_NOTE',
+    DELETE_NOTE: 'DELETE_NOTE'
+};
