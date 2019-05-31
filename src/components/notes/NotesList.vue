@@ -32,7 +32,7 @@
   import actions from '../../store/action-types';
 
   export default {
-    name: 'mt-students-list',
+    name: 'mt-notes-list',
     components: {
       StNotesListItem,
       StConfirmDelete,

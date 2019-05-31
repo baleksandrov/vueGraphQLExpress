@@ -10,6 +10,9 @@ export default {
   [mutations.SET_SELECTED_NOTE](state, note){
     state.selectedNote = note;
   },
+  [mutations.CHECK_SELECTED_NOTE](state, note){
+    state.selectedNote = note;
+  },
   [mutations.ADD_NOTE](state, note){
     state.notesList.push(note);
   },

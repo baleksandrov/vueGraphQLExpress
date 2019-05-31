@@ -6,13 +6,12 @@
     >
       <b-form-input id="name" v-model="name" placeholder="Note name"></b-form-input>
     </b-form-group>
-    <b-form-textarea
-            id="text"
-            v-model="text"
-            placeholder="Enter notes text..."
-            rows="3"
-            max-rows="6"
-    ></b-form-textarea>
+    <b-form-group
+            label="Text"
+            label-for="text"
+    >
+      <b-form-input id="text" v-model="text" placeholder="Note text"></b-form-input>
+    </b-form-group>
     <b-btn block @click="addNote" variant="success">Add</b-btn>
   </b-card>
 </template>
@@ -25,7 +24,7 @@
     data() {
       return {
         name: '',
-        text: '',
+        text: ''
       };
     },
     methods: {

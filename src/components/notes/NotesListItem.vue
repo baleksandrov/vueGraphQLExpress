@@ -6,11 +6,11 @@
         <span class="note-text text-info">{{ text }}</span>
       </div>
       <div class="buttons-container mx-3">
-        <span class="view-note"
-              @click="viewNoteDetails"
-        >
-          <i class="fa fa-bar-chart mx-2" aria-hidden="true"></i>
-          View Details
+        Check this note:
+        <input type="checkbox" @click="checkNote">
+        <span class="edit-item ml-3"
+              @click="viewNoteDetails">
+          <i class="fa fa-edit" aria-hidden="true"></i>
         </span>
         <span class="remove-item ml-3"
               @click="setSelectedNote"
@@ -30,7 +30,7 @@
     props: {
       _id: String,
       name: String,
-      text: String,
+      text: String
     },
     methods: {
       setSelectedNote() {
@@ -42,7 +42,14 @@
           this.$store.commit(mutations.SET_SELECTED_NOTE,
           currentNote);
       },
-
+      checkNote() {
+        const currentNote = {
+          _id: this._id,
+          state: 'true'
+        };
+        this.$store.commit(mutations.CHECK_SELECTED_NOTE,
+                currentNote);
+      },
       viewNoteDetails(){
         this.setSelectedNote();
         this.$router.push({
@@ -54,15 +61,4 @@
   };
 </script>
 
-<style scoped>
 
-  .view-note {
-    border-radius: 5px;
-    background-color: #2b994f;
-    font-size: 14px;
-    border: 1px solid #217f3b;
-    color: #fff;
-    cursor: pointer;
-  }
-
-</style>

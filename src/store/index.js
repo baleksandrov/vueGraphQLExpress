@@ -13,6 +13,7 @@ const state = {
     _id: '',
     name: '',
     text: '',
+    state: '',
   }
 };
 
