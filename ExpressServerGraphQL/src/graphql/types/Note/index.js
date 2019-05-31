@@ -11,7 +11,7 @@ export default `
   }
   type Mutation {
     addNote(name: String!, text: String!, state: Boolean): Note
-    editNote(_id: String, name: String, text: String): Note
+    editNote(_id: String, name: String, text: String, state: Boolean): Note
     deleteNote(_id: String, name: String, text: String): Note
   }
 `;

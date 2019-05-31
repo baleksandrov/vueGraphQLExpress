@@ -6,7 +6,7 @@ import getters from './getters';
 
 export default {
 
-    [actions.GET_NOTES_LIST]({commit}, params= "_id name text {_id}") {
+    [actions.GET_NOTES_LIST]({commit}, params= "_id name text") {
         commit(mutations.SET_LOADER, true);
         graphQlService.getNotesList(
             params,
@@ -65,5 +65,18 @@ export default {
             }
         )
     },
+    [actions.CHECK_NOTE]({commit, state}, params){
+        commit(mutations.SET_LOADER, true);
+        graphQlService.checkNote(
+            params,
+            (response) => {
+                commit(mutations.SET_LOADER, false);
 
+            },
+            (error) => {
+                commit(mutations.SET_LOADER, false);
+                console.log(error);
+            }
+        )
+    },
 };

@@ -13,14 +13,14 @@
                         ></b-form-input>
                       </b-form-group>
                             <b-form-group id="input-group-2"
-                            label="Password: " label-for="input-2">
+                            label="Note text: " label-for="input-2">
                         <b-form-input
                           id="input-2"
                           v-model="getCurrentNote.text"
                           placeholder="Enter note text"
                         ></b-form-input>
                       </b-form-group>
-                      <b-button type="button" @click="onSave" variant="success">Запази</b-button>
+                      <b-button type="button" @click="onSave" variant="success">Save</b-button>
                     </b-form>
                   </div>
               </div>

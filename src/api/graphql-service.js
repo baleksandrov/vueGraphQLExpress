@@ -77,4 +77,21 @@ export default {
             failure(error);
         }
     },
+    async checkNote(variables, success, failure) {
+        try {
+            const response = await graphqlClient.mutate({
+                mutation: gql`
+                    mutation($_id: String!, $name: String!, $text: String!){
+                        editNote(_id: $_id, name: $name, text: $text, state: true){
+                            _id
+                        }
+                    }
+                `,
+                variables
+            });
+            success(response);
+        } catch (error){
+            failure(error);
+        }
+    },
 }

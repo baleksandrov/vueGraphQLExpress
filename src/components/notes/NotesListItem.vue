@@ -24,13 +24,15 @@
 
 <script>
   import mutations from '../../store/mutation-types';
+  import actions from '../../store/action-types';
 
   export default {
     name: 'mt-notes-list-item',
     props: {
       _id: String,
       name: String,
-      text: String
+      text: String,
+      state: Boolean
     },
     methods: {
       setSelectedNote() {
@@ -43,12 +45,14 @@
           currentNote);
       },
       checkNote() {
+
         const currentNote = {
           _id: this._id,
-          state: 'true'
+          name: this.name,
+          text: this.text
         };
-        this.$store.commit(mutations.CHECK_SELECTED_NOTE,
-                currentNote);
+
+        this.$store.dispatch(actions.CHECK_NOTE, currentNote);
       },
       viewNoteDetails(){
         this.setSelectedNote();
